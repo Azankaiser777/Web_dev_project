@@ -24,54 +24,134 @@
         <div class="content-box">
             <h1 class="page-title">My Projects</h1>
             <div class="projects-grid">
-                <article class="project-card">
+                <article class="project-card" onclick="openModal('project1')">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 1">
+                        <img src="Pictures/monocular_distance_estimation.png" alt="Project 1">
                     </div>
                     <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A responsive web application built with modern technologies.</p>
+                        <h3>Monocular Distance Estimation</h3>
+                        <p>An application that estimated the cost of renovation of a structure using monocular distance estimation.</p>
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>Flask</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" onclick="openModal('project2')">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 2">
+                        <img src="Pictures/DIP_Processing_App.png" alt="Project 2">
                     </div>
                     <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>An interactive user interface with advanced animations.</p>
+                        <h3>Digital Image Processing App</h3>
+                        <p>An interactive App that allows the user to apply different processing on an image.</p>
                         <div class="project-tags">
-                            <span>React</span>
-                            <span>SASS</span>
+                            <span>Python</span>
+                            <span>OpenCv</span>
+                            <span>Tkinter</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" onclick="openModal('project3')">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 3">
+                        <img src="Pictures/Finance_Predictive_Modelling.png" alt="Project 3">
                     </div>
                     <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>A mobile-first design implementation.</p>
+                        <h3>Financial Predictive Modelling</h3>
+                        <p>A research based project where we collaborated with financial data bought from banks and tried to figure out the general public buying patterns.</p>
                         <div class="project-tags">
-                            <span>Bootstrap</span>
-                            <span>jQuery</span>
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>Pandas</span>
                         </div>
                     </div>
                 </article>
             </div>
         </div>
+
+        <!-- Modal containers -->
+        <div id="project1" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('project1')">&times;</span>
+                <img src="Pictures/monocular_distance_estimation.png" alt="Project 1">
+                <div class="modal-tools">
+                    <h4>Tools Used</h4>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>Flask</span>
+                    </div>
+                </div>
+                <div class="modal-description">
+                    <h3>Monocular Distance Estimation</h3>
+                    <p>This project's main motivation was the fact that renovators or construction workers have no accurate way to measure how much material is used in a specific structure. The construction companies cannot determine accurately the cost that would be required to fully renovate a particular structure. Basically, our approach was to use monocular distance estimation and proper 3d trigonometric principles to firstly determine the distance to the structure using a monocular camera and then by applying trigonometric principles and a deep learning approach to finally calculate the estimated renovation cost of that structure. We do this by estimating the distance from the camera and using that, we estimate the height, width and the depth of the structure and finally calculating the volume. After we get that, we can use a deep learning approach that is trained on a huge number of data to predict the estimated renovation cost in a particular region / area. In this project, We collected our own data by going to different places and taking pictures on our own. After that we made a web crawler using spyder which crawled on google maps and by going to the live view mode, we took tens of thousands of pictures in a particular area. For depth estimation we used DepthAnythingV2 model, and for renovation cost estimation, we developed our own deep learning model using PyTorch. This project paves the way for smarter city planning and urban development. By using state-of-the-art computer vision techniques, we hope that this project makes way for others to create innovative applications to help the real estate sector.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project2" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('project2')">&times;</span>
+                <img src="Pictures/DIP_Processing_App.png" alt="Project 2">
+                <div class="modal-tools">
+                    <h4>Tools Used</h4>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>OpenCv</span>
+                        <span>Tkinter</span>
+                    </div>
+                </div>
+                <div class="modal-description">
+                    <h3>Digital Image Processing App</h3>
+                    <p>A desktop app made using the Tkinter library. The app was basically a digital image processing app where we could upload any image and perform image transformation and image processing techniques. All the image processing techniques were written using NumPy from scratch. Some of the algorithms were different types of thresholding, image filtering, blurring, enhancement, etc in real time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project3" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal('project3')">&times;</span>
+                <img src="Pictures/Finance_Predictive_Modelling.png" alt="Project 3">
+                <div class="modal-tools">
+                    <h4>Tools Used</h4>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>Pandas</span>
+                    </div>
+                </div>
+                <div class="modal-description">
+                    <h3>Financial Predictive Modelling</h3>
+                    <p>This was a research based project where we initially gathered public data by surveys. Then, we collaborated with a bank and bought public data as well. The main goal of the project was to develop a predictive modelling approach where we find out different buying patterns of the general public. We also conducted a comparative analysis on deep learning models and simple machine learning models on the collected dataset.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Muhammad Azaan Kaiser. All rights reserved.</p>
+        <p>🦇 2025 Muhammad Azaan Kaiser. I am batman!</p>
     </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
 </body>
 </html>
