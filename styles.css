@@ -302,3 +302,56 @@ footer {
         grid-template-columns: 1fr 2fr;
     }
 }
+
+/* Video Demo Page Styles */
+.video-container {
+    margin: 2rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-fallback {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.video-fallback h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.youtube-link {
+    display: inline-block;
+    background: #ff0000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.youtube-link:hover {
+    background: #cc0000;
+}
+
+/* Site Report Page Styles */
+.report-section ul {
+    list-style: disc;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.report-section ul li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.report-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Report - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .report-section {
+            margin-bottom: 2rem;
+        }
+        .report-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .validation-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .validation-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .validation-images img:hover {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sitereport.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="videoDemo.html">Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-box">
+            <h1 class="page-title">Site Development Report</h1>
+
+            <div class="report-section">
+                <h2>Development Experience</h2>
+                <p>As a second-semester BSc Web Development and Cyber Security student, this portfolio project represents my growing understanding of web development principles. I'm focusing on creating secure and efficient web solutions while learning the fundamentals of HTML, CSS, and responsive design.</p>
+                
+                <p>My academic background in cyber security has made me particularly mindful of implementing secure practices in web development. This portfolio showcases both my design capabilities and my commitment to security best practices.</p>
+            </div>
+
+            <div class="report-section">
+                <h2>Design Decisions</h2>
+                <p>The design approach focused on minimalism and user experience. I chose a color scheme based on blues and neutral tones to convey professionalism while maintaining visual interest. The primary colors used are:</p>
+                <ul>
+                    <li>Primary Blue (#3498db) - For highlighting and calls-to-action</li>
+                    <li>Dark Blue (#2c3e50) - For headers and navigation</li>
+                    <li>Light Gray (#f5f7fa) - For backgrounds</li>
+                </ul>
+                
+                <p>The font selection prioritized readability, using Arial as the primary font with appropriate fallbacks. The spacing and typography were influenced by modern web design trends seen on platforms like Dribbble and Behance.</p>
+                
+                <p>The gradient background adds subtle depth while maintaining content readability. Content cards feature slight shadows and rounded corners for a modern, clean aesthetic.</p>
+            </div>
+
+            <div class="report-section">
+                <h2>Validation Reports</h2>
+                <div class="validation-images">
+                    <img src="Pictures/validation1.png" alt="Validation Screenshot 1" onclick="openLightbox(this.src)">
+                    <img src="Pictures/validation2.png" alt="Validation Screenshot 2" onclick="openLightbox(this.src)">
+                    <img src="Pictures/validation3.png" alt="Validation Screenshot 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="lightbox" onclick="closeLightbox()">
+                    <span class="close-lightbox">&times;</span>
+                    <img src="" alt="Lightbox Image">
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h2>Video Demonstration</h2>
+                <p>A complete walkthrough of the website's features and functionality can be found here:</p>
+                <p><a href="videoDemo.html" class="youtube-link">Watch the Demo</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Azaan Kaiser. All rights reserved.</p>
+    </footer>
+    <script>
+        function openLightbox(imgSrc) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
