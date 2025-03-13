@@ -11,24 +11,24 @@
         }
         .report-section h2 {
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .validation-images {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1rem 0;
+            grid-template-columns: repeat(3, 1.5fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
         .validation-images img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
+            height: 100%;
+            border-radius: 7px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             cursor: pointer;
             transition: transform 0.3s ease;
         }
         .validation-images img:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
         .lightbox {
             display: none;
@@ -37,25 +37,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
+            background: rgba(41, 41, 41, 0.9);
+            z-index: 1001;
             justify-content: center;
             align-items: center;
         }
         .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-        }
-        .lightbox.active {
-            display: flex;
+            max-width: 89%;
+            max-height: 89vh;
         }
         .close-lightbox {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 30px;
+            top: 22px;
+            right: 22px;
+            color: rgb(234, 234, 234);
+            font-size: 32px;
             cursor: pointer;
+        }
+        /* New CSS for checkbox-based lightbox */
+        .lightbox-toggle {
+            display: none;
+        }
+        .lightbox-label {
+            cursor: pointer;
+            display: block;
+        }
+        .lightbox-toggle:checked + .lightbox {
+            display: flex;
         }
     </style>
 </head>
@@ -101,13 +109,41 @@
             <div class="report-section">
                 <h2>Validation Reports</h2>
                 <div class="validation-images">
-                    <img src="Pictures/validation1.png" alt="Validation Screenshot 1" onclick="openLightbox(this.src)">
-                    <img src="Pictures/validation2.png" alt="Validation Screenshot 2" onclick="openLightbox(this.src)">
-                    <img src="Pictures/validation3.png" alt="Validation Screenshot 3" onclick="openLightbox(this.src)">
-                </div>
-                <div class="lightbox" onclick="closeLightbox()">
-                    <span class="close-lightbox">&times;</span>
-                    <img src="" alt="Lightbox Image">
+                    <!-- First Image -->
+                    <div>
+                        <input type="checkbox" id="lightbox1" class="lightbox-toggle">
+                        <div class="lightbox">
+                            <label for="lightbox1" class="close-lightbox">&times;</label>
+                            <img src="Pictures/validation1.png" alt="Validation Screenshot 1">
+                        </div>
+                        <label for="lightbox1" class="lightbox-label">
+                            <img src="Pictures/validation1.png" alt="Validation Screenshot 1">
+                        </label>
+                    </div>
+                    
+                    <!-- Second Image -->
+                    <div>
+                        <input type="checkbox" id="lightbox2" class="lightbox-toggle">
+                        <div class="lightbox">
+                            <label for="lightbox2" class="close-lightbox">&times;</label>
+                            <img src="Pictures/validation2.png" alt="Validation Screenshot 2">
+                        </div>
+                        <label for="lightbox2" class="lightbox-label">
+                            <img src="Pictures/validation2.png" alt="Validation Screenshot 2">
+                        </label>
+                    </div>
+                    
+                    <!-- Third Image -->
+                    <div>
+                        <input type="checkbox" id="lightbox3" class="lightbox-toggle">
+                        <div class="lightbox">
+                            <label for="lightbox3" class="close-lightbox">&times;</label>
+                            <img src="Pictures/validation3.png" alt="Validation Screenshot 3">
+                        </div>
+                        <label for="lightbox3" class="lightbox-label">
+                            <img src="Pictures/validation3.png" alt="Validation Screenshot 3">
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -122,18 +158,5 @@
     <footer>
         <p>🦇 2025 Muhammad Azaan Kaiser. I am batman!</p>
     </footer>
-    <script>
-        function openLightbox(imgSrc) {
-            const lightbox = document.querySelector('.lightbox');
-            const lightboxImg = lightbox.querySelector('img');
-            lightboxImg.src = imgSrc;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.querySelector('.lightbox');
-            lightbox.classList.remove('active');
-        }
-    </script>
 </body>
 </html>

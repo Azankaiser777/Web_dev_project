@@ -34,13 +34,11 @@ Hey! I made this portfolio website during my second semester studying BSc Web De
 - sitereport.html - All the technical stuff
 
 ## Where I'm At
-Got the main parts done:
+Completed:
 - Basic structure
 - All the styling
 - Works on different screens
 - Added all the content
-
-Just need to polish things up a bit!
 
 ## Should Work On
 - Chrome
